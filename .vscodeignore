@@ -1,0 +1,10 @@
+.git/
+.github/
+.gitignore
+.vscodeignore
+node_modules/
+dist/
+test/
+test-*.js
+PROMPT.md
+scripts/

@@ -1,0 +1,65 @@
+{
+    "name": "fabric-notebook-viewer",
+    "displayName": "Fabric Notebook Viewer",
+    "description": "Open Microsoft Fabric notebook-content.py and Azure Synapse notebook .json files as native VS Code notebooks.",
+    "version": "0.1.0",
+    "publisher": "jimb-local",
+    "engines": {
+        "vscode": "^1.95.0"
+    },
+    "categories": [
+        "Notebooks"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/purduepete/fabric-notebook-viewer-vscode-extension.git"
+    },
+    "bugs": {
+        "url": "https://github.com/purduepete/fabric-notebook-viewer-vscode-extension/issues"
+    },
+    "homepage": "https://github.com/purduepete/fabric-notebook-viewer-vscode-extension#readme",
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "fabricNotebook.open",
+                "title": "Open as Fabric Notebook"
+            },
+            {
+                "command": "synapseNotebook.open",
+                "title": "Open as Synapse Notebook"
+            }
+        ],
+        "notebooks": [
+            {
+                "type": "fabric-notebook",
+                "displayName": "Microsoft Fabric Notebook",
+                "selector": [
+                    {
+                        "filenamePattern": "**/*.Notebook/notebook-content.py"
+                    }
+                ]
+            },
+            {
+                "type": "synapse-notebook",
+                "displayName": "Azure Synapse Notebook",
+                "selector": [
+                    {
+                        "filenamePattern": "**/Synapse/notebook/**/*.json"
+                    }
+                ]
+            }
+        ]
+    },
+    "scripts": {
+        "test": "node test-parser.js && node test-synapse-parser.js",
+        "prepackage": "powershell -NoProfile -Command \"New-Item -ItemType Directory -Force dist | Out-Null\"",
+        "package": "vsce package --out dist/fabric-notebook-viewer.vsix",
+        "install:local": "powershell -ExecutionPolicy Bypass -File .\\scripts\\Install-Extension.ps1"
+    },
+    "devDependencies": {
+        "@vscode/vsce": "^3.6.2"
+    },
+    "license": "UNLICENSED",
+    "private": true
+}

@@ -1,0 +1,6 @@
+Fabric Notebook Viewer
+
+Copyright (c) 2026 Jim Butler. All rights reserved.
+
+This software is not licensed for redistribution, modification, or public use
+without prior written permission from the copyright holder.
