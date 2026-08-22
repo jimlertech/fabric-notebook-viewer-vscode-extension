@@ -2,6 +2,10 @@
 
 All notable changes to Fabric Notebook Viewer are documented here.
 
+## 0.1.2 - 2026-08-22
+
+- Add a custom notebook cell icon to the Marketplace listing.
+
 ## 0.1.1 - 2026-08-22
 
 - Add native notebook viewing and round-trip editing for Microsoft Fabric `notebook-content.py` files.

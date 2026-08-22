@@ -2,8 +2,9 @@
     "name": "fabric-notebook-viewer",
     "displayName": "Fabric Notebook Viewer",
     "description": "Open Microsoft Fabric notebook-content.py and Azure Synapse notebook .json files as native VS Code notebooks.",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "publisher": "lerxst",
+    "icon": "images/icon.png",
     "engines": {
         "vscode": "^1.95.0"
     },
@@ -59,6 +60,7 @@
     },
     "scripts": {
         "test": "node test-parser.js && node test-synapse-parser.js",
+        "build:icon": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\Build-Icon.ps1",
         "prepackage": "powershell -NoProfile -Command \"New-Item -ItemType Directory -Force dist | Out-Null\"",
         "package": "vsce package --out dist/fabric-notebook-viewer.vsix",
         "install:local": "powershell -ExecutionPolicy Bypass -File .\\scripts\\Install-Extension.ps1"
