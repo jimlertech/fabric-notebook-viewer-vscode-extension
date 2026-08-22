@@ -2,7 +2,7 @@
     "name": "fabric-notebook-viewer",
     "displayName": "Fabric Notebook Viewer",
     "description": "Open Microsoft Fabric notebook-content.py and Azure Synapse notebook .json files as native VS Code notebooks.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "jimb-local",
     "engines": {
         "vscode": "^1.95.0"

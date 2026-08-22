@@ -11,7 +11,7 @@
 # CELL ********************
 
 # MAGIC %%configure
-# MAGIC 
+# MAGIC
 # MAGIC {
 # MAGIC     "environment":
 # MAGIC         {
@@ -42,6 +42,18 @@
 # - **Soft inputs:** none
 # - **Output:** `lh_silver.conformed.dim_adjustmenttype`
 # - **Grain:** one row per adjustment type (AdjustmentTypeId)
+
+# PARAMETERS CELL ********************
+
+run_mode = "full"
+as_of_date = None
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 

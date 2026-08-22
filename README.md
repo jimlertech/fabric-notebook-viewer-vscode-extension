@@ -6,11 +6,12 @@ Local VS Code notebook serializer for two source-controlled notebook formats:
 - Azure Synapse `**/Synapse/notebook/*.json` (the ARM/workspace export shape, `properties.cells`)
 
 It renders code and Markdown cells in the native notebook editor while preserving the on-disk
-source exactly. Fabric files keep their `# MAGIC`, `# METADATA`, and `# META` syntax; Synapse
-files keep their JSON key order, indentation, line endings, and every property the viewer does
-not understand (`bigDataPool`, `sessionProperties`, cell `metadata`, `execution_count`). Synapse
-cells starting with a magic such as `%%sql` are highlighted in that language. Neither format gets
-a local Spark execution kernel.
+source exactly. Fabric files keep their `# MAGIC`, `# METADATA`, and `# META` syntax, and a
+`# PARAMETERS CELL` block is surfaced as its own code cell rather than being folded into the
+cell above it. Synapse files keep their JSON key order, indentation, line endings, and every
+property the viewer does not understand (`bigDataPool`, `sessionProperties`, cell `metadata`,
+`execution_count`). Synapse cells starting with a magic such as `%%sql` are highlighted in that
+language. Neither format gets a local Spark execution kernel.
 
 ## Development install
 

@@ -1,6 +1,6 @@
 'use strict';
 
-const CELL_MARKER = /^# (CELL|MARKDOWN) \*+\s*$/;
+const CELL_MARKER = /^# (PARAMETERS CELL|CELL|MARKDOWN) \*+\s*$/;
 const METADATA_MARKER = /^# METADATA \*+\s*$/;
 const DEFAULT_CODE_MARKER = '# CELL ********************';
 const DEFAULT_MARKDOWN_MARKER = '# MARKDOWN ********************';
@@ -56,7 +56,7 @@ function parseFabricNotebook(text) {
     }
 
     if (markerIndexes.length === 0) {
-        throw new Error('No Fabric # CELL or # MARKDOWN markers were found.');
+        throw new Error('No Fabric # CELL, # PARAMETERS CELL or # MARKDOWN markers were found.');
     }
 
     const cells = markerIndexes.map((markerIndex, cellIndex) => {
@@ -68,6 +68,7 @@ function parseFabricNotebook(text) {
         const footerLines = footerIndex >= 0 ? segment.slice(footerIndex) : [];
         const boundary = splitBoundaryBlanks(bodyRegion);
         const kind = marker.startsWith('# MARKDOWN') ? 'markdown' : 'code';
+        const parameters = marker.startsWith('# PARAMETERS CELL');
         const magic = kind === 'code' && isMagicCell(boundary.bodyLines);
         const decodedLines =
             kind === 'markdown'
@@ -87,6 +88,7 @@ function parseFabricNotebook(text) {
                 fabricLeadingBlankCount: boundary.leadingBlankCount,
                 fabricTrailingBlankCount: boundary.trailingBlankCount,
                 fabricMagic: magic,
+                fabricParameters: parameters,
                 fabricOriginalValue: value,
                 fabricOriginalBodyLines: boundary.bodyLines,
             },
