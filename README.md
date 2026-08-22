@@ -1,6 +1,6 @@
 # Fabric Notebook Viewer
 
-Local VS Code notebook serializer for two source-controlled notebook formats:
+View and edit two source-controlled notebook formats in VS Code's native notebook editor:
 
 - Microsoft Fabric `*.Notebook/notebook-content.py`
 - Azure Synapse `**/Synapse/notebook/*.json` (the ARM/workspace export shape, `properties.cells`)
@@ -13,14 +13,12 @@ property the viewer does not understand (`bigDataPool`, `sessionProperties`, cel
 `execution_count`). Synapse cells starting with a magic such as `%%sql` are highlighted in that
 language. Neither format gets a local Spark execution kernel.
 
-## Development install
+## Install
 
-VS Code loads this via a directory junction, so edits here take effect after a window reload:
+Install **Fabric Notebook Viewer** from the VS Code Marketplace, or run this command from VS Code:
 
 ```powershell
-New-Item -ItemType Junction `
-  -Path (Join-Path $HOME '.vscode\extensions\jimb-local.fabric-notebook-viewer-0.1.0') `
-  -Target 'C:\Files\Dev\main\work\vscode\fabric-notebook-viewer'
+code --install-extension lerxst.fabric-notebook-viewer
 ```
 
 To render Fabric notebooks automatically in a workspace, add to its `.vscode/settings.json`:
@@ -36,10 +34,9 @@ use **Reopen Editor With… > Text Editor**, or pin it per workspace:
 "workbench.editorAssociations": { "**/Synapse/notebook/*.json": "default" }
 ```
 
-## Share with other computers
+## Build from source
 
-The source is intended to live in a Git repository. On a computer where you want to use the
-extension, clone the repository, then build and install the VS Code extension package:
+Clone the repository, then build and install the VS Code extension package:
 
 ```powershell
 git clone https://github.com/purduepete/fabric-notebook-viewer-vscode-extension.git `
@@ -60,8 +57,7 @@ git pull
 .\scripts\Install-Extension.ps1
 ```
 
-Use the directory junction only for active development. A packaged `.vsix` is the normal install
-path for other computers.
+A packaged `.vsix` is the normal install path for local builds.
 
 ## Test
 
