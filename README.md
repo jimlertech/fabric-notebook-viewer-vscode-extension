@@ -46,8 +46,8 @@ Set-Location C:\Files\Dev\main\fabric-notebook-viewer-vscode-extension
 .\scripts\Install-Extension.ps1
 ```
 
-The build creates `dist/fabric-notebook-viewer.vsix`. The install script force-updates the matching
-extension on that computer. Reload VS Code after installation.
+The build creates `dist/fabric-notebook-viewer-0.1.3.vsix`. The install script
+force-updates the matching extension on that computer. Reload VS Code after installation.
 
 To update an existing install:
 

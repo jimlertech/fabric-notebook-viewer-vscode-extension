@@ -2,6 +2,10 @@
 
 All notable changes to Fabric Notebook Viewer are documented here.
 
+## 0.1.3 - 2026-08-26
+
+- Write versioned VSIX distributions to `dist` through the repository-local VSCE package.
+
 ## 0.1.2 - 2026-08-22
 
 - Add a custom notebook cell icon to the Marketplace listing.
