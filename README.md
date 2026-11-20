@@ -39,7 +39,7 @@ use **Reopen Editor With… > Text Editor**, or pin it per workspace:
 Clone the repository, then build and install the VS Code extension package:
 
 ```powershell
-git clone https://github.com/purduepete/fabric-notebook-viewer-vscode-extension.git `
+git clone https://github.com/jimlertech/fabric-notebook-viewer-vscode-extension.git `
   C:\Files\Dev\main\fabric-notebook-viewer-vscode-extension
 Set-Location C:\Files\Dev\main\fabric-notebook-viewer-vscode-extension
 .\scripts\Build-Extension.ps1
