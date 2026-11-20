@@ -2,6 +2,10 @@
 
 All notable changes to Fabric Notebook Viewer are documented here.
 
+## 0.1.4 - 2026-11-20
+
+- Move the repository to the jimlertech GitHub organization and update the repository, issues and homepage links.
+
 ## 0.1.3 - 2026-08-26
 
 - Write versioned VSIX distributions to `dist` through the repository-local VSCE package.
